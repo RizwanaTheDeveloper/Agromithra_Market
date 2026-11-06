@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Starter user record only: add verification, sessions, listings and contact policies later.
+model User {
+  id        String   @id @default(uuid()) @db.Uuid
+  displayName String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

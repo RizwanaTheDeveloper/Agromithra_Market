@@ -1,0 +1,14 @@
+node_modules/
+.expo/
+.next/
+dist/
+build/
+coverage/
+.env
+.env.local
+.env.*.local
+!.env.example
+*.log
+frontend/android/
+frontend/ios/
+backend/generated/

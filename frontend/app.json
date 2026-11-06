@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "Agromitra Market",
+    "slug": "agromitra-market",
+    "scheme": "agromitra-market",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "android": {
+      "package": "ai.agromitra.market"
+    }
+  }
+}
