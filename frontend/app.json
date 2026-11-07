@@ -4,8 +4,22 @@
     "slug": "agromitra-market",
     "scheme": "agromitra-market",
     "version": "0.1.0",
+<<<<<<< HEAD
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
+=======
+    "orientation": "default",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "ai.agromitra.market"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "name": "Agromitra Market"
+    },
+>>>>>>> 6991212 (frontend)
     "plugins": [
       "expo-router"
     ],
@@ -13,7 +27,12 @@
       "typedRoutes": true
     },
     "android": {
+<<<<<<< HEAD
       "package": "ai.agromitra.market"
+=======
+      "package": "ai.agromitra.market",
+      "softwareKeyboardLayoutMode": "resize"
+>>>>>>> 6991212 (frontend)
     }
   }
 }

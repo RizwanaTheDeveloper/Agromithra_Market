@@ -1,11 +1,19 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+<<<<<<< HEAD
     "strict": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [
         "src/*"
+=======
+    "jsx": "react-jsx",
+    "strict": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+>>>>>>> 6991212 (frontend)
       ]
     }
   },
@@ -14,5 +22,14 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
+<<<<<<< HEAD
+=======
+  ],
+  "exclude": [
+    "node_modules",
+    "reference",
+    "public",
+    "dist"
+>>>>>>> 6991212 (frontend)
   ]
 }

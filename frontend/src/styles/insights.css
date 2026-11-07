@@ -1,0 +1,77 @@
+/* Price, media-readiness and buyer-evidence screens. */
+.smart-header { padding: 16px 0 24px; }
+.smart-header > span, .smart-symbol { width: 54px; height: 54px; border-radius: 18px; background: var(--mint); display: grid; place-items: center; color: var(--forest); flex-shrink: 0; }
+.smart-header > span svg, .smart-symbol svg { width: 27px; height: 27px; }
+.smart-header h1 { margin: 20px 0 18px; font-size: 30px; }
+.smart-header p { color: var(--muted); font-size: 15px; line-height: 1.6; }
+.smart-status { padding: 16px; background: #f3f6eb; border: 1px solid #e1e8d4; border-radius: 20px; margin: 14px 0; }
+.smart-status strong { font-size: 14px; }
+.smart-status p { color: var(--muted); font-size: 13px; line-height: 1.65; margin-top: 8px; }
+.smart-listing-row { display: flex; width: 100%; text-align: left; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.smart-listing-row:last-child { border-bottom: 0; }
+.smart-listing-row img { width: 56px; height: 56px; border-radius: 16px; background: #eff4e9; object-fit: cover; flex-shrink: 0; }
+.smart-listing-row > span { flex: 1; }
+.smart-listing-row strong { display: block; font-size: 14px; }
+.smart-listing-row small { display: block; color: var(--muted); font-size: 12px; margin-top: 6px; }
+.smart-listing-row > svg { width: 17px; height: 17px; flex-shrink: 0; }
+.smart-home-button { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; padding: 20px; background: var(--mint); border: 1px solid var(--line); border-radius: 20px; margin: 22px 0; }
+.smart-home-button > span { flex: 1; }
+.smart-home-button strong, .smart-home-button small { display: block; }
+.smart-home-button small { color: var(--muted); margin-top: 5px; font-size: 12px; }
+.smart-home-button svg { width: 25px; height: 25px; flex-shrink: 0; }
+.smart-mini { border: 1px solid var(--line); border-radius: 20px; background: #f3f6eb; padding: 18px; margin: 18px 0; }
+.smart-mini .row { align-items: center; gap: 12px; }
+.smart-mini p { font-size: 13px; color: var(--muted); }
+.smart-mini .tag { margin-top: 12px; }
+.card-report-link { padding: 12px; border-top: 1px solid var(--line); width: 100%; display: flex; align-items: center; justify-content: center; gap: 7px; color: var(--forest); font-size: 12px; font-weight: 700; }
+.card-report-link svg { height: 16px; width: 16px; }
+.smart-listing-help { background: var(--mint); border-radius: 18px; padding: 18px; margin: 18px 0; }
+.smart-listing-help svg { width: 22px; height: 22px; }
+.smart-listing-help p { font-size: 13px; color: var(--muted); margin-top: 8px; }
+.smart-price-range { font-size: 26px; font-weight: 800; color: var(--forest); margin: 16px 0; }
+.smart-facts, .smart-fact-grid { display: grid; gap: 12px; }
+.smart-metrics { display: grid; gap: 8px; margin-top: 15px; }
+.smart-metrics > div, .smart-metric { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.smart-source, .smart-source-row { border-bottom: 1px solid var(--line); padding: 14px 0; }
+.smart-source small { color: var(--muted); }
+.smart-report-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
+.smart-report-tabs button { flex: 1; min-height: 44px; padding: 10px; border-radius: 12px; background: white; border: 1px solid var(--line); }
+.smart-report-tabs button.active { background: var(--forest); color: white; }
+.smart-table-wrap { overflow-x: auto; }
+.smart-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; overflow: visible; white-space: normal; }
+.smart-tabs .chip { min-width: 0; padding: 10px 8px; white-space: normal; text-align: center; line-height: 1.4; }
+.smart-report-title { margin-bottom: 18px; }
+.smart-report-title h1 { overflow-wrap: anywhere; }
+.smart-report-title p { margin-top: 8px; color: var(--muted); }
+.smart-source-line { color: #716025; background: #f8f2df; border: 1px solid #eee2ba; border-radius: 12px; padding: 12px 14px; margin: 16px 0; font-size: 12px; line-height: 1.6; }
+.smart-price-hero { padding: 22px; border: 1px solid var(--line); border-radius: 20px; background: var(--mint); }
+.smart-price-hero > small { display: block; color: var(--muted); }
+.smart-price-hero h2 { margin: 10px 0 6px; color: var(--forest); font-size: clamp(25px, 4vw, 34px); }
+.smart-price-hero > p { color: var(--muted); font-size: 13px; }
+.smart-modal-price { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; border-top: 1px solid #cbdccc; margin-top: 16px; padding-top: 14px; }
+.smart-modal-price span { font-size: 13px; }
+.smart-modal-price strong { font-size: 21px; color: var(--forest); }
+.smart-price-table { margin: 18px 0; background: white; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+.smart-price-table th { background: #f0f4ed; font-size: 12px; color: var(--muted); }
+.smart-price-table td { vertical-align: top; }
+.smart-price-table td strong, .smart-price-table td small { display: block; }
+.smart-price-table td small { margin-top: 5px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.smart-price-table .link { display: block; min-height: 40px; text-align: left; }
+.smart-history { display: grid; gap: 12px; margin: 18px 0; }
+.smart-history > div { display: grid; grid-template-columns: 46px minmax(0, 1fr) 78px; gap: 10px; align-items: center; font-size: 12px; }
+.smart-history span { height: 9px; border-radius: 6px; background: var(--green); }
+.smart-history strong { text-align: right; }
+.smart-listing-help .row { justify-content: flex-start; gap: 10px; }
+.smart-frame { padding: 14px; margin-top: 12px; border: 1px solid var(--line); border-radius: 14px; }
+.smart-checklist { display: grid; gap: 12px; padding-left: 20px; font-size: 14px; }
+.smart-quality-summary { padding: 18px; border-radius: 16px; background: var(--mint); margin: 16px 0; }
+@media (max-width: 600px) {
+  .smart-tabs .chip { font-size: 12px; }
+  .smart-price-table table, .smart-price-table tbody { display: block; }
+  .smart-price-table thead { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); }
+  .smart-price-table tbody tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 16px; gap: 14px 18px; border-bottom: 1px solid var(--line); }
+  .smart-price-table tbody tr:last-child { border-bottom: 0; }
+  .smart-price-table td { display: block; min-width: 0; padding: 0; border: 0; }
+  .smart-price-table td:first-child { grid-column: 1 / -1; }
+  .smart-price-table td::before { content: attr(data-label); display: block; color: var(--muted); font-size: 11px; margin-bottom: 5px; }
+}

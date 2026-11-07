@@ -1,0 +1,42 @@
+{
+  "scripts": [
+    "data/marketplace.js",
+    "data/prices.js",
+    "lib/price-engine.js",
+    "components/icons.js",
+    "core/base-functions.js",
+    "features/messaging/base.js",
+    "components/base.js",
+    "features/marketplace/base.js",
+    "features/onboarding/base.js",
+    "features/requirements/base.js",
+    "features/listings/base.js",
+    "features/trades/base.js",
+    "features/services/base.js",
+    "features/payments/base.js",
+    "features/account/base.js",
+    "features/support/base.js",
+    "features/administration/base.js",
+    "features/media/base.js",
+    "core/base-runtime.js",
+    "core/comfort-functions.js",
+    "features/listings/comfort.js",
+    "features/verification/comfort.js",
+    "features/marketplace/comfort.js",
+    "features/trades/comfort.js",
+    "features/media/comfort.js",
+    "features/guide/comfort.js",
+    "core/comfort-runtime.js",
+    "core/insights-functions.js",
+    "features/insights/insights.js",
+    "features/media/insights.js",
+    "core/insights-runtime.js",
+    "core/browser.js"
+  ],
+  "styles": [
+    "styles/base.css",
+    "styles/comfort.css",
+    "styles/insights.css",
+    "styles/responsive.css"
+  ]
+}

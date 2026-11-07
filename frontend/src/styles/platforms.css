@@ -1,0 +1,44 @@
+/* Safe areas are supplied by the OS wrapper on native and CSS env() on the web. */
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --page-space: 18px;
+  --header-space: 18px;
+  --keyboard-bottom: 0px;
+}
+html[data-native] { --safe-top: 0px; --safe-right: 0px; --safe-bottom: 0px; --safe-left: 0px; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-bottom: 110px; }
+#app { min-height: 100vh; min-height: var(--viewport-height, 100dvh); }
+main { padding-left: calc(var(--page-space) + var(--safe-left)); padding-right: calc(var(--page-space) + var(--safe-right)); padding-bottom: calc(112px + var(--safe-bottom)); }
+.topbar { padding-top: calc(14px + var(--safe-top)); padding-left: calc(var(--header-space) + var(--safe-left)); padding-right: calc(var(--header-space) + var(--safe-right)); }
+.field input, .field select, .field textarea, .chat-compose input { font-size: max(16px, 1em); }
+.field input, .field select, .field textarea { min-width: 0; width: 100%; }
+.icon-button { min-width: 44px; min-height: 44px; }
+.chip, .inline-actions button { min-height: 44px; }
+.nav button { min-height: 52px; }
+.sticky-actions, .chat-compose { bottom: var(--keyboard-bottom); padding-bottom: calc(14px + var(--safe-bottom)); }
+.modal-overlay { bottom: var(--keyboard-bottom); padding-left: calc(14px + var(--safe-left)); padding-right: calc(14px + var(--safe-right)); padding-bottom: calc(20px + var(--safe-bottom)); }
+.modal { max-height: calc(var(--viewport-height, 100dvh) - 40px - var(--safe-top) - var(--safe-bottom)); -webkit-overflow-scrolling: touch; }
+input, select, textarea { scroll-margin-top: 100px; scroll-margin-bottom: 120px; }
+html[data-keyboard-open="true"] .sticky-actions { display: none; }
+@media (max-width: 1099px) {
+  .nav { padding-left: calc(12px + var(--safe-left)); padding-right: calc(12px + var(--safe-right)); padding-bottom: calc(12px + var(--safe-bottom)); }
+  html[data-keyboard-open="true"] .nav { display: none; }
+}
+@media (max-width: 355px) { :root { --page-space: 13px; --header-space: 13px; } }
+@media (min-width: 700px) { :root { --page-space: 36px; --header-space: 36px; } }
+@media (min-width: 1100px) {
+  :root { --page-space: 40px; --header-space: 32px; }
+  .nav button { min-height: 58px; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .topbar { min-height: 56px; padding-top: calc(8px + var(--safe-top)); padding-bottom: 8px; }
+  .modal-overlay { align-items: center; padding-top: 12px; padding-bottom: 12px; }
+  .modal { padding: 18px; max-height: calc(var(--viewport-height, 100dvh) - 24px); }
+}
+@media print {
+  #app { min-height: 0; }
+  main { padding: 0; }
+}
