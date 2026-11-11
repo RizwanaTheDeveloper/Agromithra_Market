@@ -1,0 +1,194 @@
+{
+  "title": {
+    "en": "How the app works",
+    "te": "యాప్ ఎలా పనిచేస్తుంది"
+  },
+  "headline": {
+    "en": "One app. Both sides.",
+    "te": "ఒక యాప్. రెండు అవసరాలు."
+  },
+  "intro": {
+    "en": "Switch between buying and selling whenever you need.",
+    "te": "అవసరమైనప్పుడు కొనుగోలు మరియు అమ్మకం మార్చండి."
+  },
+  "sellerTitle": {
+    "en": "For a farmer / seller",
+    "te": "రైతు / విక్రేత కోసం"
+  },
+  "sellerSteps": [
+    {
+      "title": {
+        "en": "Open Sell",
+        "te": "అమ్మండి తెరవండి"
+      },
+      "body": {
+        "en": "Use the same account. Choose any of eight segments.",
+        "te": "అదే ఖాతా వాడండి. ఎనిమిది వర్గాల్లో ఎంచుకోండి."
+      }
+    },
+    {
+      "title": {
+        "en": "Add photos or a video",
+        "te": "ఫోటోలు లేదా వీడియో"
+      },
+      "body": {
+        "en": "Select up to six photos and one short video. Choose your cover photo.",
+        "te": "ఆరు ఫోటోలు మరియు ఒక చిన్న వీడియో. ప్రధాన ఫోటో ఎంచుకోండి."
+      }
+    },
+    {
+      "title": {
+        "en": "Enter stock and price",
+        "te": "పరిమాణం మరియు ధర"
+      },
+      "body": {
+        "en": "Title, quantity, unit, price and village. Extra details are optional.",
+        "te": "పేరు, పరిమాణం, యూనిట్, ధర మరియు గ్రామం. మరిన్ని వివరాలు ఐచ్ఛికం."
+      }
+    },
+    {
+      "title": {
+        "en": "Choose contact privacy",
+        "te": "సంప్రదింపు గోప్యత"
+      },
+      "body": {
+        "en": "Allow WhatsApp, calls or pause sharing. Number stays hidden from unverified buyers.",
+        "te": "వాట్సాప్, కాల్ లేదా సంప్రదింపు నిలిపివేత. ధృవీకరణ లేని వారికి నంబర్ కనిపించదు."
+      }
+    },
+    {
+      "title": {
+        "en": "Preview and post",
+        "te": "చూసి పోస్ట్ చేయండి"
+      },
+      "body": {
+        "en": "Manage stock, edit, pause or mark sold from My listings.",
+        "te": "నా లిస్టింగ్‌లలో మార్చండి, నిలిపివేయండి లేదా అమ్మినట్లు గుర్తించండి."
+      }
+    },
+    {
+      "title": {
+        "en": "Talk to a verified buyer",
+        "te": "ధృవీకరించిన వారితో మాట్లాడండి"
+      },
+      "body": {
+        "en": "Check their buyer profile. Block or report unwanted enquiries.",
+        "te": "కొనుగోలుదారు ప్రొఫైల్ చూడండి. అవసరమైతే బ్లాక్ లేదా ఫిర్యాదు చేయండి."
+      }
+    }
+  ],
+  "buyerTitle": {
+    "en": "For a buyer",
+    "te": "కొనుగోలుదారు కోసం"
+  },
+  "buyerSteps": [
+    {
+      "title": {
+        "en": "Open Buy and search",
+        "te": "కొనండి తెరిచి వెతకండి"
+      },
+      "body": {
+        "en": "Browse category, location, photos, video and price.",
+        "te": "వర్గం, ప్రాంతం, ఫోటోలు, వీడియో మరియు ధర చూడండి."
+      }
+    },
+    {
+      "title": {
+        "en": "Complete buyer verification",
+        "te": "కొనుగోలుదారు ధృవీకరణ"
+      },
+      "body": {
+        "en": "Phone OTP → buyer purpose and profile → review. Contact remains locked until approval.",
+        "te": "ఫోన్ OTP → ఉద్దేశ్యం మరియు ప్రొఫైల్ → సమీక్ష. అంగీకారం వరకు సంప్రదింపు లేదు."
+      }
+    },
+    {
+      "title": {
+        "en": "Unlock seller contact",
+        "te": "విక్రేత సంప్రదింపు"
+      },
+      "body": {
+        "en": "Only approved buyers get the permitted contact methods. Paused, sold and blocked listings stay locked.",
+        "te": "అంగీకరించిన వారికి మాత్రమే అనుమతించిన సంప్రదింపు. నిలిపిన, అమ్మిన మరియు బ్లాక్ లిస్టింగ్‌లకు అనుమతి లేదు."
+      }
+    },
+    {
+      "title": {
+        "en": "WhatsApp or call",
+        "te": "వాట్సాప్ లేదా కాల్"
+      },
+      "body": {
+        "en": "Discuss availability, price and a visit. WhatsApp opens with a listing summary; calls open the dialer.",
+        "te": "లభ్యత, ధర మరియు సందర్శన చర్చించండి. వాట్సాప్‌లో లిస్టింగ్ సారాంశం, కాల్‌కు డయలర్ తెరుస్తుంది."
+      }
+    },
+    {
+      "title": {
+        "en": "Check and agree",
+        "te": "తనిఖీ మరియు అంగీకారం"
+      },
+      "body": {
+        "en": "Inspect crop quality or animal health, agree price and arrange pickup. Optional demo trade tools remain in Activity.",
+        "te": "సరుకు నాణ్యత లేదా పశువుల ఆరోగ్యం చూసి ధర అంగీకరించి పికప్ ఏర్పాటు చేయండి."
+      }
+    }
+  ],
+  "buyAction": {
+    "en": "Start buying",
+    "te": "కొనుగోలు ప్రారంభించండి"
+  },
+  "sellAction": {
+    "en": "Start selling",
+    "te": "అమ్మకం ప్రారంభించండి"
+  },
+  "qualityTitle": {
+    "en": "Price and quality flow",
+    "te": "ధర మరియు నాణ్యత ప్రక్రియ"
+  },
+  "qualitySteps": [
+    {
+      "title": {
+        "en": "Seller: upload and check",
+        "te": "విక్రేత: మీడియా తనిఖీ"
+      },
+      "body": {
+        "en": "Add real media. Check capture clarity, then record measured or declared evidence. AI examples are simulated.",
+        "te": "నిజమైన మీడియా జోడించి కాంతి తనిఖీ చేయండి. కొలిచిన వివరాలు నమోదు చేయండి. AI నమూనా మాత్రమే."
+      }
+    },
+    {
+      "title": {
+        "en": "Seller: compare and set a price",
+        "te": "విక్రేత: ధరలు పోల్చండి"
+      },
+      "body": {
+        "en": "Match product, variety, grade and unit. Compare dated area references and enter lot transport costs. Choose your own asking price, then preview and post.",
+        "te": "సరుకు, రకం, గ్రేడ్ మరియు యూనిట్ పోల్చండి. ప్రాంతీయ ధరలు, రవాణా ఖర్చులు చూసి మీ ధర పెట్టి పోస్ట్ చేయండి."
+      }
+    },
+    {
+      "title": {
+        "en": "Buyer: review the report",
+        "te": "కొనుగోలుదారు: రిపోర్ట్ చూడండి"
+      },
+      "body": {
+        "en": "Read price source/date, media warnings and seller evidence. Arrange independent crop testing or veterinary inspection where needed.",
+        "te": "ధర మూలం, తేదీ, మీడియా మరియు విక్రేత వివరాలు చూడండి. అవసరమైన పరీక్ష లేదా పశువైద్య తనిఖీ ఏర్పాటు చేయండి."
+      }
+    },
+    {
+      "title": {
+        "en": "Buyer: verify and contact",
+        "te": "కొనుగోలుదారు: ధృవీకరణ మరియు సంప్రదింపు"
+      },
+      "body": {
+        "en": "Complete buyer approval to unlock permitted WhatsApp or call details. Agree the final price and pickup directly.",
+        "te": "అంగీకారం తరువాత వాట్సాప్ లేదా కాల్ ద్వారా చివరి ధర మరియు పికప్ మాట్లాడండి."
+      }
+    }
+  ],
+  "insightsAction": {
+    "en": "Open insights",
+    "te": "ధర వివరాలు చూడండి"
+  }
+}

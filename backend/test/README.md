@@ -1,1 +1,1 @@
-Add integration and API contract tests before deploying marketplace features.
+Run `npm test` for compiled application rule tests. Run `npm run test:integration` with a dedicated, migrated `TEST_DATABASE_URL` for PostgreSQL API tests. The integration suite skips when this variable is absent. See ../README.md for setup and current production gaps.

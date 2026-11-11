@@ -1,3 +1,4 @@
 import { Module } from '@nestjs/common';
 import { ListingsController } from './listings.controller';
-@Module({controllers:[ListingsController]}) export class ListingsModule {}
+import { ListingsService } from './listings.service';
+@Module({controllers:[ListingsController],providers:[ListingsService]}) export class ListingsModule {}

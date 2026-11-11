@@ -1,0 +1,28 @@
+<!doctype html><meta charset="utf-8"><title>Check local Agromitra listings</title>
+<script>
+// Read only app-owned browser records. No API requests or storage changes.
+(async () => {
+  if (parent === window || !document.referrer) return;
+  let origin;
+  try {origin=new URL(document.referrer).origin;} catch (_) {return;}
+  if (!/^http:\/\/(localhost|127\.0\.0\.1):(8081|4173|4174|19006)$/.test(origin)) return;
+  const read=key=>{try {return JSON.parse(localStorage.getItem(key)||'null')||{};} catch (_) {return {};}};
+  const current=read('agromitra.market.prototype.v1'),legacy=read('agromitra.home-profile.v1'),backup=read('agromitra.market.local-backup.v1');
+  const list=rows=>Array.isArray(rows)?rows:[];
+  const listings=[...list(backup.listings),...list(current.listings).filter(row=>(row.own||row.seller==='ME')&&!row.remote),...list(legacy.account?.ownListings).map(row=>({...row,own:true}))];
+  const media=[];
+  try {
+    // Opening a missing database would create it. Only read an existing store.
+    if (indexedDB.databases && (await indexedDB.databases()).some(db=>db.name==='agromitra.media.v11')) {
+      const db=await new Promise((resolve,reject)=>{const request=indexedDB.open('agromitra.media.v11');request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);});
+      try {
+        if (db.objectStoreNames.contains('media')) for (const id of new Set(listings.flatMap(row=>list(row.media).map(item=>item.id)))) {
+          const blob=await new Promise((resolve,reject)=>{const request=db.transaction('media').objectStore('media').get(id);request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);});
+          if (blob instanceof Blob) media.push({id,blob});
+        }
+      } finally {db.close();}
+    }
+  } catch (_) { /* Listing text remains recoverable if media access is blocked. */ }
+  parent.postMessage({type:'market-device-recovery',nonce:new URLSearchParams(location.search).get('nonce'),listings,media},origin);
+})();
+</script>

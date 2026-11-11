@@ -1,4 +1,6 @@
 node_modules/
+.npm-cache/
+*.tsbuildinfo
 .expo/
 .next/
 dist/
@@ -12,3 +14,6 @@ coverage/
 frontend/android/
 frontend/ios/
 backend/generated/
+
+# Uploaded listing photos and videos (stored on disk; the database keeps their location)
+backend/uploads/

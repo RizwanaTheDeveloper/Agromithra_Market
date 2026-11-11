@@ -7,10 +7,286 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Starter user record only: add verification, sessions, listings and contact policies later.
 model User {
   id        String   @id @default(uuid()) @db.Uuid
+  phone     String   @unique
   displayName String?
+  city      String?
+  language  String @default("en")
+  business String @default("Individual")
+  role String @default("buyer")
+  isAdmin   Boolean @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  sessions Session[]
+  listings Listing[]
+  verification BuyerVerification?
+  requests BuyerRequest[]
+  purchases Deal[] @relation("Buyer")
+  sales Deal[] @relation("Seller")
+  blocks SellerBlock[] @relation("BlockingSeller")
+  blockedBy SellerBlock[] @relation("BlockedBuyer")
+  contacts ContactEvent[]
+  savedListings SavedListing[]
+  enquiries Conversation[] @relation("Enquirer")
+  receivedEnquiries Conversation[] @relation("EnquirySeller")
+  messages Message[]
+}
+
+enum Category {
+  crops
+  produce
+  cattle
+  smallstock
+  poultry
+  eggs
+  aqua
+  dairy
+}
+
+enum Unit {
+  quintal
+  kg
+  tonne
+  animal
+  bird
+  egg
+  tray30
+  litre
+  fish
+}
+
+enum ListingStatus {
+  draft
+  active
+  paused
+  sold
+  withdrawn
+}
+
+enum VerificationStatus {
+  pending
+  approved
+  rejected
+}
+
+enum DealStage {
+  quote
+  inspection
+  agreed
+  dispatched
+  completed
+  cancelled
+}
+
+enum PriceBasis {
+  mandi
+  asking
+  completed
+  processor
+}
+
+model OtpChallenge {
+  id String @id @default(uuid()) @db.Uuid
+  phone String
+  digest String
+  attempts Int @default(0)
+  expiresAt DateTime
+  consumedAt DateTime?
+  createdAt DateTime @default(now())
+  @@index([phone, createdAt])
+}
+
+model Session {
+  id String @id @default(uuid()) @db.Uuid
+  tokenHash String @unique
+  userId String @db.Uuid
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  @@index([userId])
+}
+
+model BuyerVerification {
+  userId String @id @db.Uuid
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  business String
+  purpose String
+  status VerificationStatus @default(pending)
+  reviewNote String?
+  reviewedBy String? @db.Uuid
+  reviewedAt DateTime?
+  submittedAt DateTime @default(now())
+}
+
+model Listing {
+  id String @id @default(uuid()) @db.Uuid
+  sellerId String @db.Uuid
+  seller User @relation(fields: [sellerId], references: [id])
+  media ListingMedia[]
+  savedBy SavedListing[]
+  conversations Conversation[]
+  title String
+  description String
+  category Category
+  product String
+  variety String
+  grade String @default("Unspecified")
+  details Json @default("[]")
+  unit Unit
+  price Decimal @db.Decimal(14, 2)
+  quantity Decimal @db.Decimal(14, 3)
+  minimumOrder Decimal @db.Decimal(14, 3)
+  city String
+  district String
+  state String
+  status ListingStatus @default(draft)
+  allowCall Boolean @default(false)
+  allowWhatsapp Boolean @default(false)
+  expiresAt DateTime
+  revision Int @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deals Deal[]
+  contacts ContactEvent[]
+  @@index([status, category, createdAt])
+  @@index([sellerId, status])
+}
+
+model ListingMedia {
+  id String @id @default(uuid()) @db.Uuid
+  listingId String @db.Uuid
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  clientKey String
+  kind String
+  name String
+  mime String
+  data Bytes?
+  path String?
+  position Int @default(0)
+  @@unique([listingId, clientKey])
+}
+
+model SavedListing {
+  userId String @db.Uuid
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  listingId String @db.Uuid
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  @@id([userId, listingId])
+}
+
+model Conversation {
+  id String @id @default(uuid()) @db.Uuid
+  listingId String @db.Uuid
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  buyerId String @db.Uuid
+  buyer User @relation("Enquirer", fields: [buyerId], references: [id], onDelete: Cascade)
+  sellerId String @db.Uuid
+  seller User @relation("EnquirySeller", fields: [sellerId], references: [id], onDelete: Cascade)
+  updatedAt DateTime @default(now())
+  messages Message[]
+  @@unique([listingId, buyerId])
+}
+
+model Message {
+  id String @id @default(uuid()) @db.Uuid
+  conversationId String @db.Uuid
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  senderId String @db.Uuid
+  sender User @relation(fields: [senderId], references: [id], onDelete: Cascade)
+  text String
+  createdAt DateTime @default(now())
+  @@index([conversationId, createdAt])
+}
+
+model SellerBlock {
+  sellerId String @db.Uuid
+  buyerId String @db.Uuid
+  seller User @relation("BlockingSeller", fields: [sellerId], references: [id], onDelete: Cascade)
+  buyer User @relation("BlockedBuyer", fields: [buyerId], references: [id], onDelete: Cascade)
+  @@id([sellerId, buyerId])
+}
+
+model ContactEvent {
+  id String @id @default(uuid()) @db.Uuid
+  buyerId String @db.Uuid
+  buyer User @relation(fields: [buyerId], references: [id])
+  listingId String @db.Uuid
+  listing Listing @relation(fields: [listingId], references: [id])
+  channel String
+  createdAt DateTime @default(now())
+  @@index([listingId, createdAt])
+}
+
+model BuyerRequest {
+  id String @id @default(uuid()) @db.Uuid
+  buyerId String @db.Uuid
+  buyer User @relation(fields: [buyerId], references: [id])
+  title String
+  category Category
+  quantity Decimal @db.Decimal(14, 3)
+  unit Unit
+  city String
+  budget Decimal? @db.Decimal(14, 2)
+  purpose String @default("")
+  note String @default("")
+  expiresAt DateTime
+  closed Boolean @default(false)
+  createdAt DateTime @default(now())
+  @@index([closed, category, expiresAt])
+}
+
+model Deal {
+  id String @id @default(uuid()) @db.Uuid
+  listingId String @db.Uuid
+  listing Listing @relation(fields: [listingId], references: [id])
+  buyerId String @db.Uuid
+  buyer User @relation("Buyer", fields: [buyerId], references: [id])
+  sellerId String @db.Uuid
+  seller User @relation("Seller", fields: [sellerId], references: [id])
+  quantity Decimal @db.Decimal(14, 3)
+  unit Unit
+  unitPrice Decimal @db.Decimal(14, 2)
+  stage DealStage @default(quote)
+  version Int @default(1)
+  idempotencyKey String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  events DealEvent[]
+  @@unique([buyerId, idempotencyKey])
+  @@index([sellerId, stage])
+  @@index([buyerId, stage])
+}
+
+model DealEvent {
+  id String @id @default(uuid()) @db.Uuid
+  dealId String @db.Uuid
+  deal Deal @relation(fields: [dealId], references: [id])
+  actorId String @db.Uuid
+  stage DealStage
+  createdAt DateTime @default(now())
+}
+
+model MarketObservation {
+  id String @id @default(uuid()) @db.Uuid
+  product String
+  variety String
+  grade String
+  unit Unit
+  state String
+  district String
+  market String
+  reportedAt DateTime @db.Date
+  minimum Decimal @db.Decimal(14, 2)
+  modal Decimal @db.Decimal(14, 2)
+  maximum Decimal @db.Decimal(14, 2)
+  basis PriceBasis
+  sourceName String
+  sourceUrl String
+  importedBy String @db.Uuid
+  provenance String @default("admin-imported-unverified")
+  createdAt DateTime @default(now())
+  @@unique([product, variety, grade, unit, market, reportedAt, basis, sourceName])
+  @@index([product, unit, basis, reportedAt])
 }

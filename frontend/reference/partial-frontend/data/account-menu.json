@@ -1,0 +1,118 @@
+{
+  "trust": [
+    {
+      "icon": "shield",
+      "title": "Buyer verification",
+      "titleTe": "కొనుగోలుదారు ధృవీకరణ",
+      "subtitle": "Buyer not verified",
+      "subtitleTe": "కొనుగోలుదారు ధృవీకరించబడలేదు",
+      "id": "verification"
+    },
+    {
+      "icon": "lock",
+      "title": "Contact privacy",
+      "titleTe": "సంప్రదింపు గోప్యత",
+      "subtitle": "Sharing choices and blocked buyers",
+      "subtitleTe": "సంప్రదింపు అనుమతి మరియు బ్లాక్ జాబితా",
+      "id": "contact-privacy"
+    },
+    {
+      "icon": "phone",
+      "title": "Contact history",
+      "titleTe": "సంప్రదింపు చరిత్ర",
+      "subtitle": "WhatsApp and call enquiries",
+      "subtitleTe": "వాట్సాప్ మరియు కాల్ విచారణలు",
+      "id": "contact-history"
+    },
+    {
+      "icon": "help",
+      "title": "Complete buying / selling flow",
+      "titleTe": "కొనుగోలు / అమ్మకం పూర్తి ప్రక్రియ",
+      "subtitle": "Three-step listing and buyer verification",
+      "subtitleTe": "మూడు దశల లిస్టింగ్ మరియు ధృవీకరణ",
+      "id": "flow-guide"
+    }
+  ],
+  "account": [
+    {
+      "icon": "user",
+      "title": "Profile and language",
+      "titleTe": "ప్రొఫైల్ మరియు భాష",
+      "subtitle": "Name, business type, English / Telugu",
+      "subtitleTe": "పేరు, వ్యాపార రకం, ఇంగ్లీష్ / తెలుగు",
+      "id": "profile"
+    },
+    {
+      "icon": "leaf",
+      "title": "My listings",
+      "titleTe": "నా లిస్టింగ్‌లు",
+      "subtitle": "Edit, pause, sold status and expiry",
+      "subtitleTe": "మార్పులు, నిలిపివేత, అమ్మకం మరియు గడువు",
+      "id": "manage-listings"
+    },
+    {
+      "icon": "heart",
+      "title": "Saved listings",
+      "titleTe": "సేవ్ చేసిన లిస్టింగ్‌లు",
+      "subtitle": "Your buying shortlist",
+      "subtitleTe": "మీ కొనుగోలు ఎంపికలు",
+      "id": "saved"
+    },
+    {
+      "icon": "request",
+      "title": "My requirements",
+      "titleTe": "నా అవసరాలు",
+      "subtitle": "Requirements and supplier quotes",
+      "subtitleTe": "అవసరాలు మరియు సరఫరాదారు ప్రతిపాదనలు",
+      "id": "my-requests"
+    },
+    {
+      "icon": "chat",
+      "title": "Messages",
+      "titleTe": "సందేశాలు",
+      "subtitle": "Local enquiries and demo replies",
+      "subtitleTe": "స్థానిక విచారణలు మరియు నమూనా సమాధానాలు",
+      "id": "inbox"
+    },
+    {
+      "icon": "calendar",
+      "title": "Services and bookings",
+      "titleTe": "సేవలు మరియు బుకింగ్‌లు",
+      "subtitle": "Inspections, visits and transport",
+      "subtitleTe": "తనిఖీలు, సందర్శనలు మరియు రవాణా",
+      "id": "services"
+    },
+    {
+      "icon": "star",
+      "title": "Buyer Pro and promotion",
+      "titleTe": "బయ్యర్ ప్రో మరియు ప్రచారం",
+      "subtitle": "Sample subscription and sponsored listings",
+      "subtitleTe": "నమూనా చందా మరియు ప్రాయోజిత లిస్టింగ్‌లు",
+      "id": "plans"
+    },
+    {
+      "icon": "wallet",
+      "title": "Payment records",
+      "titleTe": "చెల్లింపు రికార్డులు",
+      "subtitle": "Fictional advances and settlements",
+      "subtitleTe": "కల్పిత అడ్వాన్స్ మరియు చెల్లింపులు",
+      "id": "payments"
+    },
+    {
+      "icon": "help",
+      "title": "Help and support",
+      "titleTe": "సహాయం మరియు సపోర్ట్",
+      "subtitle": "Report listings, disputes and sample tickets",
+      "subtitleTe": "ఫిర్యాదులు, వివాదాలు మరియు నమూనా టికెట్లు",
+      "id": "support"
+    },
+    {
+      "icon": "chart",
+      "title": "Demo management console",
+      "titleTe": "నమూనా నిర్వహణ",
+      "subtitle": "Moderation and marketplace analytics",
+      "subtitleTe": "నిర్వహణ మరియు మార్కెట్ విశ్లేషణ",
+      "id": "admin"
+    }
+  ]
+}
